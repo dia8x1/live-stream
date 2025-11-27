@@ -1,35 +1,27 @@
 import Link from 'next/link'
+import { Search } from 'lucide-react'
 
 export default function NavBar() {
 	return (
-		<nav className="border-b border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900">
-			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+		<nav className="fixed top-0 w-full bg-dark/80 backdrop-blur-md">
+			<div className="mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex h-16 items-center justify-between">
 					{/* Logo */}
 					<div className="flex items-center">
-						<Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-							MyApp
+						<Link href="/" className="text-xl font-bold text-white">
+							Live
 						</Link>
 					</div>
 
-					{/* Navigation Links */}
-					{/* <div className="hidden md:block">
-						<div className="flex items-center space-x-4">
-							<Link href="/" className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
-								Home
-							</Link>
-							<Link href="/about" className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
-								About
-							</Link>
-							<Link href="/contact" className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-white">
-								Contact
-							</Link>
-						</div>
-					</div> */}
+					{/* Search Bar */}
+					<div className="relative sm:w-64 md:w-84 px-4">
+						<input type="text" placeholder="검색" className="w-full pl-4 pr-10 rounded-full border border-tertiary bg-dark px-3 py-2 text-sm text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-400" />
+						<Search className="absolute right-7 top-1/2 h-4 w-4 -translate-y-1/2 text-tertiary cursor-pointer" />
+					</div>
 
-					{/* Mobile menu button */}
-					<div className="inline-flex items-center justify-center rounded-md p-2">
-						<div className="w-10 h-10 bg-gray-200 rounded-full cursor-pointer"></div>
+					{/* Profile */}
+					<div className="inline-flex items-center justify-center">
+						<div className="w-9 h-9 bg-white rounded-full outline-blue-400 outline-3 cursor-pointer"></div>
 					</div>
 				</div>
 			</div>
